@@ -13,6 +13,7 @@ export const rotatingPlus = (p5: P5) => {
 
   const draw = () => {
     p5.noStroke();
+    p5.rectMode(p5.CENTER);
     p5.translate(tileSize/2, tileSize/2)
 
     windowMin = Math.max(p5.windowHeight, p5.windowWidth);

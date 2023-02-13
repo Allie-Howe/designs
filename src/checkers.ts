@@ -11,6 +11,7 @@ const speed = 0.0002;
 
 export const checkers = (p5: P5) => {
   const draw = () => {
+    p5.rectMode(p5.CENTER);
     const maxSize = Math.max(p5.width, p5.height);
     squareSize = maxSize/NUM_SQUARES;
     timing = (speed*p5.millis())%1;

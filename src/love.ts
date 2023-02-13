@@ -19,6 +19,7 @@ export const love = (p5: P5) => {
   }
 
   const draw = () => {
+    p5.rectMode(p5.CENTER);
     p5.translate(p5.width/2, p5.height/2);
     timing = speed * p5.millis();
 
