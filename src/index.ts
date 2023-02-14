@@ -1,5 +1,6 @@
 import P5 from 'p5'
 import { checkers } from './checkers';
+import { circlesAndLines } from './circlesAndLines';
 import { contrastingCircles } from './contrastingCircles';
 import { love } from './love';
 import { rotatingPlus } from './rotatingPlus';
@@ -7,6 +8,7 @@ import { rotatingTriangles } from './rotatingTriangles';
 
 let animIndex = 0;
 const drawFnArray: ((p5: P5) => (() => void))[] = [
+  circlesAndLines,
   rotatingTriangles,
   contrastingCircles,
   love,
