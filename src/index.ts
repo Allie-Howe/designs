@@ -3,9 +3,11 @@ import { checkers } from './checkers';
 import { contrastingCircles } from './contrastingCircles';
 import { love } from './love';
 import { rotatingPlus } from './rotatingPlus';
+import { rotatingTriangles } from './rotatingTriangles';
 
 let animIndex = 0;
 const drawFnArray: ((p5: P5) => (() => void))[] = [
+  rotatingTriangles,
   contrastingCircles,
   love,
   rotatingPlus,
@@ -27,6 +29,8 @@ const sketch = (p5: P5) => {
   }
 
   p5.draw = () => drawFnArray[animIndex % drawFnArray.length](p5)();
+
+  // TODO: could run setup of each sketch here
   p5.mousePressed = () => animIndex++;
 }
 
