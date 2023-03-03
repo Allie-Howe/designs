@@ -17,6 +17,7 @@ const drawFnArray: ((p5: P5) => (() => void))[] = [
 ];
 
 const sketch = (p5: P5) => {
+
   p5.windowResized = () => {
     p5.resizeCanvas(window.innerWidth, window.innerHeight)
   }
@@ -34,8 +35,14 @@ const sketch = (p5: P5) => {
   p5.draw = () => drawFnArray[animIndex % drawFnArray.length](p5)();
 }
 
+window.onload = () => {
+  const isMobile = window.innerWidth < 1000;
+  isMobile && document.querySelectorAll('span').forEach((span) => span.innerHTML = 'tap')
+}
+
 window.addEventListener('click', () => {
   animIndex++;
+  document.querySelector('#info')?.remove()
 });
 
 new P5(sketch)
