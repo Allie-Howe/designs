@@ -32,9 +32,10 @@ const sketch = (p5: P5) => {
   }
 
   p5.draw = () => drawFnArray[animIndex % drawFnArray.length](p5)();
-
-  // TODO: could run setup of each sketch here
-  p5.mousePressed = () => animIndex++;
 }
+
+window.addEventListener('click', () => {
+  animIndex++;
+});
 
 new P5(sketch)
