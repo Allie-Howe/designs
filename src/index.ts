@@ -24,6 +24,7 @@ const sketch = (p5: P5) => {
   p5.setup = () => {
     p5.createCanvas(window.innerWidth, window.innerHeight)
     p5.frameRate(60)
+    p5.pixelDensity(2)
 
     p5.rectMode(p5.CENTER)
     p5.ellipseMode(p5.CENTER);
